@@ -1,0 +1,194 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0xE46E516760CBFF19",
+      "device": "xc7a50tcsg325-2L",
+      "name": "Pcie_RP",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.2",
+      "validated": "true"
+    },
+    "design_tree": {
+      "pcie_7x_0": ""
+    },
+    "interface_ports": {
+      "pcie_7x_mgt_0": {
+        "mode": "Master",
+        "vlnv": "xilinx.com:interface:pcie_7x_mgt_rtl:1.0"
+      },
+      "s_axis_tx_0": {
+        "mode": "Slave",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "TDATA_NUM_BYTES": {
+            "value": "8"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "4"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "HAS_TKEEP": {
+            "value": "1"
+          },
+          "HAS_TLAST": {
+            "value": "1"
+          },
+          "FREQ_HZ": {
+            "value": "62500000"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "ports": {
+      "sys_clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "Pcie_RP_sys_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "sys_rst_n_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "pcie_7x_0": {
+        "vlnv": "xilinx.com:ip:pcie_7x:3.3",
+        "xci_name": "Pcie_RP_pcie_7x_0_0",
+        "parameters": {
+          "Acceptable_L1_Latency": {
+            "value": "Maximum_of_1_us"
+          },
+          "Bar0_Scale": {
+            "value": "Megabytes"
+          },
+          "Bar0_Size": {
+            "value": "1"
+          },
+          "Bar0_Type": {
+            "value": "Memory"
+          },
+          "Bar1_Type": {
+            "value": "N/A"
+          },
+          "Bar2_Type": {
+            "value": "N/A"
+          },
+          "Bar3_Type": {
+            "value": "N/A"
+          },
+          "Bar4_Type": {
+            "value": "N/A"
+          },
+          "Bar5_Type": {
+            "value": "N/A"
+          },
+          "Base_Class_Menu": {
+            "value": "Bridge_device"
+          },
+          "Class_Code_Base": {
+            "value": "06"
+          },
+          "Class_Code_Sub": {
+            "value": "00"
+          },
+          "Device_ID": {
+            "value": "7111"
+          },
+          "Device_Port_Type": {
+            "value": "Root_Port_of_PCI_Express_Root_Complex"
+          },
+          "Link_Speed": {
+            "value": "2.5_GT/s"
+          },
+          "Pcie_fast_config": {
+            "value": "None"
+          },
+          "Sub_Class_Interface_Menu": {
+            "value": "Host_bridge"
+          },
+          "mode_selection": {
+            "value": "Advanced"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "pcie_7x_0_pcie_7x_mgt": {
+        "interface_ports": [
+          "pcie_7x_mgt_0",
+          "pcie_7x_0/pcie_7x_mgt"
+        ]
+      },
+      "s_axis_tx_0_1": {
+        "interface_ports": [
+          "s_axis_tx_0",
+          "pcie_7x_0/s_axis_tx"
+        ]
+      }
+    },
+    "nets": {
+      "sys_clk_0_1": {
+        "ports": [
+          "sys_clk_0",
+          "pcie_7x_0/sys_clk",
+          "pcie_7x_0/pcie_drp_clk"
+        ]
+      },
+      "sys_rst_n_0_1": {
+        "ports": [
+          "sys_rst_n_0",
+          "pcie_7x_0/sys_rst_n"
+        ]
+      }
+    }
+  }
+}
