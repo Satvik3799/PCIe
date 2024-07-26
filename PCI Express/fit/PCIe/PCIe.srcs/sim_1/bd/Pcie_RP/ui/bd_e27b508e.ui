@@ -1,21 +1,26 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.0",
-   "Default View_TopLeft":"-437,-288",
+   "Default View_ScaleFactor":"0.855172",
+   "Default View_TopLeft":"-526,-320",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port pcie_7x_mgt_0 -pg 1 -lvl 2 -x 360 -y -100 -defaultsOSRD
-preplace port s_axis_tx_0 -pg 1 -lvl 0 -x -30 -y -140 -defaultsOSRD
-preplace port sys_clk_0 -pg 1 -lvl 0 -x -30 -y 20 -defaultsOSRD
-preplace port sys_rst_n_0 -pg 1 -lvl 0 -x -30 -y 40 -defaultsOSRD
-preplace inst pcie_7x_0 -pg 1 -lvl 1 -x 170 -y -40 -defaultsOSRD
-preplace netloc sys_clk_0_1 1 0 1 -10 20n
-preplace netloc sys_rst_n_0_1 1 0 1 N 40
-preplace netloc pcie_7x_0_pcie_7x_mgt 1 1 1 N -100
-preplace netloc s_axis_tx_0_1 1 0 1 N -140
-levelinfo -pg 1 -30 170 360
-pagesize -pg 1 -db -bbox -sgen -160 -200 510 320
+preplace port pcie_7x_mgt_0 -pg 1 -lvl 2 -x 370 -y -100 -defaultsOSRD
+preplace port s_axis_tx_0 -pg 1 -lvl 0 -x -50 -y -140 -defaultsOSRD
+preplace port sys_clk_0 -pg 1 -lvl 0 -x -50 -y 20 -defaultsOSRD
+preplace port sys_rst_n_0 -pg 1 -lvl 0 -x -50 -y 40 -defaultsOSRD
+preplace port user_clk_out_0 -pg 1 -lvl 2 -x 370 -y -20 -defaultsOSRD
+preplace port user_reset_out_0 -pg 1 -lvl 2 -x 370 -y 0 -defaultsOSRD
+preplace inst pcie_7x_0 -pg 1 -lvl 1 -x 160 -y -290 -defaultsOSRD
+preplace inst pcie_7x_1 -pg 1 -lvl 1 -x 160 -y 130 -defaultsOSRD
+preplace netloc sys_clk_0_1 1 0 1 -20 -240n
+preplace netloc sys_rst_n_0_1 1 0 1 -10 -220n
+preplace netloc pcie_7x_0_user_clk_out 1 1 1 340 -270n
+preplace netloc pcie_7x_0_user_reset_out 1 1 1 330 -250n
+preplace netloc pcie_7x_0_pcie_7x_mgt 1 1 1 350 -350n
+preplace netloc s_axis_tx_0_1 1 0 1 -30 -380n
+levelinfo -pg 1 -50 160 370
+pagesize -pg 1 -db -bbox -sgen -180 -440 530 450
 "
 }
 

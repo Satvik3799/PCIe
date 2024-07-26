@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Jul 24 22:46:09 2024
+--Date        : Thu Jul 25 10:42:33 2024
 --Host        : Satvik running 64-bit major release  (build 9200)
 --Command     : generate_target Pcie_RP_wrapper.bd
 --Design      : Pcie_RP_wrapper
@@ -24,7 +24,9 @@ entity Pcie_RP_wrapper is
     s_axis_tx_0_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axis_tx_0_tvalid : in STD_LOGIC;
     sys_clk_0 : in STD_LOGIC;
-    sys_rst_n_0 : in STD_LOGIC
+    sys_rst_n_0 : in STD_LOGIC;
+    user_clk_out_0 : out STD_LOGIC;
+    user_reset_out_0 : out STD_LOGIC
   );
 end Pcie_RP_wrapper;
 
@@ -42,7 +44,9 @@ architecture STRUCTURE of Pcie_RP_wrapper is
     s_axis_tx_0_tlast : in STD_LOGIC;
     s_axis_tx_0_tready : out STD_LOGIC;
     s_axis_tx_0_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
-    s_axis_tx_0_tvalid : in STD_LOGIC
+    s_axis_tx_0_tvalid : in STD_LOGIC;
+    user_clk_out_0 : out STD_LOGIC;
+    user_reset_out_0 : out STD_LOGIC
   );
   end component Pcie_RP;
 begin
@@ -59,6 +63,8 @@ Pcie_RP_i: component Pcie_RP
       s_axis_tx_0_tuser(3 downto 0) => s_axis_tx_0_tuser(3 downto 0),
       s_axis_tx_0_tvalid => s_axis_tx_0_tvalid,
       sys_clk_0 => sys_clk_0,
-      sys_rst_n_0 => sys_rst_n_0
+      sys_rst_n_0 => sys_rst_n_0,
+      user_clk_out_0 => user_clk_out_0,
+      user_reset_out_0 => user_reset_out_0
     );
 end STRUCTURE;

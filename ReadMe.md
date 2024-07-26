@@ -11,6 +11,7 @@ This project is a comprehensive implementation and simulation of a PCIe (Periphe
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Repository](#repository)
+- [References](#references)
 
 ## Introduction
 
@@ -46,4 +47,11 @@ To replicate this project, you will need:
 
 Clone the repository to get started:
 ```bash
-git clone https://github.com/dave-roo/PCIe
+git clone https://github.com/
+  
+
+# References
+
+https://www.udemy.com/course/vivado-learn-from-the-beginning-and-with-pcie-full-project/?couponCode=ST3MT72524
+
+https://www.fpga4fun.com/PCI1.html

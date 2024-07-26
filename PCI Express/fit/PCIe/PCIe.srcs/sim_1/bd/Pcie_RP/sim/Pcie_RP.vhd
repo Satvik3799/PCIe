@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Wed Jul 24 22:46:09 2024
+--Date        : Thu Jul 25 10:42:33 2024
 --Host        : Satvik running 64-bit major release  (build 9200)
 --Command     : generate_target Pcie_RP.bd
 --Design      : Pcie_RP
@@ -24,7 +24,9 @@ entity Pcie_RP is
     s_axis_tx_0_tuser : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s_axis_tx_0_tvalid : in STD_LOGIC;
     sys_clk_0 : in STD_LOGIC;
-    sys_rst_n_0 : in STD_LOGIC
+    sys_rst_n_0 : in STD_LOGIC;
+    user_clk_out_0 : out STD_LOGIC;
+    user_reset_out_0 : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
   attribute CORE_GENERATION_INFO of Pcie_RP : entity is "Pcie_RP,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=Pcie_RP,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=1,numReposBlks=1,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
@@ -217,6 +219,8 @@ architecture STRUCTURE of Pcie_RP is
   signal pcie_7x_0_pcie_7x_mgt_rxp : STD_LOGIC_VECTOR ( 0 to 0 );
   signal pcie_7x_0_pcie_7x_mgt_txn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal pcie_7x_0_pcie_7x_mgt_txp : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal pcie_7x_0_user_clk_out : STD_LOGIC;
+  signal pcie_7x_0_user_reset_out : STD_LOGIC;
   signal s_axis_tx_0_1_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal s_axis_tx_0_1_TKEEP : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal s_axis_tx_0_1_TLAST : STD_LOGIC;
@@ -281,9 +285,7 @@ architecture STRUCTURE of Pcie_RP is
   signal NLW_pcie_7x_0_tx_cfg_req_UNCONNECTED : STD_LOGIC;
   signal NLW_pcie_7x_0_tx_err_drop_UNCONNECTED : STD_LOGIC;
   signal NLW_pcie_7x_0_user_app_rdy_UNCONNECTED : STD_LOGIC;
-  signal NLW_pcie_7x_0_user_clk_out_UNCONNECTED : STD_LOGIC;
   signal NLW_pcie_7x_0_user_lnk_up_UNCONNECTED : STD_LOGIC;
-  signal NLW_pcie_7x_0_user_reset_out_UNCONNECTED : STD_LOGIC;
   signal NLW_pcie_7x_0_cfg_bus_number_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal NLW_pcie_7x_0_cfg_command_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal NLW_pcie_7x_0_cfg_dcommand_UNCONNECTED : STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -329,12 +331,16 @@ architecture STRUCTURE of Pcie_RP is
   attribute X_INTERFACE_PARAMETER of sys_clk_0 : signal is "XIL_INTERFACENAME CLK.SYS_CLK_0, CLK_DOMAIN Pcie_RP_sys_clk_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000";
   attribute X_INTERFACE_INFO of sys_rst_n_0 : signal is "xilinx.com:signal:reset:1.0 RST.SYS_RST_N_0 RST";
   attribute X_INTERFACE_PARAMETER of sys_rst_n_0 : signal is "XIL_INTERFACENAME RST.SYS_RST_N_0, INSERT_VIP 0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of user_clk_out_0 : signal is "xilinx.com:signal:clock:1.0 CLK.USER_CLK_OUT_0 CLK";
+  attribute X_INTERFACE_PARAMETER of user_clk_out_0 : signal is "XIL_INTERFACENAME CLK.USER_CLK_OUT_0, ASSOCIATED_BUSIF s_axis_tx_0, CLK_DOMAIN Pcie_RP_pcie_7x_0_0_user_clk_out, FREQ_HZ 62500000, INSERT_VIP 0, PHASE 0.000";
+  attribute X_INTERFACE_INFO of user_reset_out_0 : signal is "xilinx.com:signal:reset:1.0 RST.USER_RESET_OUT_0 RST";
+  attribute X_INTERFACE_PARAMETER of user_reset_out_0 : signal is "XIL_INTERFACENAME RST.USER_RESET_OUT_0, INSERT_VIP 0, POLARITY ACTIVE_HIGH";
   attribute X_INTERFACE_INFO of pcie_7x_mgt_0_rxn : signal is "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_7x_mgt_0 rxn";
   attribute X_INTERFACE_INFO of pcie_7x_mgt_0_rxp : signal is "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_7x_mgt_0 rxp";
   attribute X_INTERFACE_INFO of pcie_7x_mgt_0_txn : signal is "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_7x_mgt_0 txn";
   attribute X_INTERFACE_INFO of pcie_7x_mgt_0_txp : signal is "xilinx.com:interface:pcie_7x_mgt:1.0 pcie_7x_mgt_0 txp";
   attribute X_INTERFACE_INFO of s_axis_tx_0_tdata : signal is "xilinx.com:interface:axis:1.0 s_axis_tx_0 TDATA";
-  attribute X_INTERFACE_PARAMETER of s_axis_tx_0_tdata : signal is "XIL_INTERFACENAME s_axis_tx_0, FREQ_HZ 62500000, HAS_TKEEP 1, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 4";
+  attribute X_INTERFACE_PARAMETER of s_axis_tx_0_tdata : signal is "XIL_INTERFACENAME s_axis_tx_0, CLK_DOMAIN Pcie_RP_pcie_7x_0_0_user_clk_out, FREQ_HZ 62500000, HAS_TKEEP 1, HAS_TLAST 1, HAS_TREADY 1, HAS_TSTRB 0, INSERT_VIP 0, LAYERED_METADATA undef, PHASE 0.000, TDATA_NUM_BYTES 8, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 4";
   attribute X_INTERFACE_INFO of s_axis_tx_0_tkeep : signal is "xilinx.com:interface:axis:1.0 s_axis_tx_0 TKEEP";
   attribute X_INTERFACE_INFO of s_axis_tx_0_tuser : signal is "xilinx.com:interface:axis:1.0 s_axis_tx_0 TUSER";
 begin
@@ -350,6 +356,8 @@ begin
   s_axis_tx_0_tready <= s_axis_tx_0_1_TREADY;
   sys_clk_0_1 <= sys_clk_0;
   sys_rst_n_0_1 <= sys_rst_n_0;
+  user_clk_out_0 <= pcie_7x_0_user_clk_out;
+  user_reset_out_0 <= pcie_7x_0_user_reset_out;
 pcie_7x_0: component Pcie_RP_pcie_7x_0_0
      port map (
       cfg_aer_ecrc_check_en => NLW_pcie_7x_0_cfg_aer_ecrc_check_en_UNCONNECTED,
@@ -525,8 +533,8 @@ pcie_7x_0: component Pcie_RP_pcie_7x_0_0
       tx_cfg_req => NLW_pcie_7x_0_tx_cfg_req_UNCONNECTED,
       tx_err_drop => NLW_pcie_7x_0_tx_err_drop_UNCONNECTED,
       user_app_rdy => NLW_pcie_7x_0_user_app_rdy_UNCONNECTED,
-      user_clk_out => NLW_pcie_7x_0_user_clk_out_UNCONNECTED,
+      user_clk_out => pcie_7x_0_user_clk_out,
       user_lnk_up => NLW_pcie_7x_0_user_lnk_up_UNCONNECTED,
-      user_reset_out => NLW_pcie_7x_0_user_reset_out_UNCONNECTED
+      user_reset_out => pcie_7x_0_user_reset_out
     );
 end STRUCTURE;

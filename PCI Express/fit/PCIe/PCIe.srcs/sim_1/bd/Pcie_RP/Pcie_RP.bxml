@@ -2,13 +2,38 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="Pcie_RP" CanBeSetAsTop="true" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1721841179"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1721841179"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1721841179"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1721884353"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1721884353"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1721884353"/>
     <Generation Name="HW_HANDOFF" State="STALE" Timestamp="1721841179"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\Pcie_RP_pcie_7x_0_0\Pcie_RP_pcie_7x_0_0.xci" Type="IP">
         <Instance HierarchyPath="pcie_7x_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\Pcie_RP.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+      </File>
+      <File Name="sim\Pcie_RP.vhd" Type="VHDL">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="Pcie_RP_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="ip\Pcie_RP_pcie_7x_0_2\Pcie_RP_pcie_7x_0_2.xci" Type="IP">
+        <Instance HierarchyPath="pcie_7x_1"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
